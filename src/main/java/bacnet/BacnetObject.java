@@ -438,13 +438,13 @@ public class BacnetObject extends BacnetProperty {
 //			break;
 //		}
 		case MULTISTATE: {
-			int i = -1;
+			int i = 0;
 			if (value instanceof Enumerated) {
 				i = ((Enumerated) value).intValue();
 			} else if (value instanceof UnsignedInteger) {
 				i = ((UnsignedInteger) value).intValue();
 			}
-			if (i >= 0) {
+			if (i > 0) {
 				if (stateText.size() > i) {
 					vt = ValueType.makeEnum(stateText);
 					v = new Value(stateText.get(i));
